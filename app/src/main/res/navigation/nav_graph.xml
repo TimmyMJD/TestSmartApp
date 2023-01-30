@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="tymofiy.dev.testsmatrapp.ui.fragments.SplashFragment"
+        android:label="SplashFragment"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_splashFragment_to_webViewFragment"
+            app:destination="@id/webViewFragment" />
+        <action
+            android:id="@+id/action_splashFragment_to_gameMenuFragment"
+            app:destination="@id/gameMenuFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/webViewFragment"
+        android:name="tymofiy.dev.testsmatrapp.ui.fragments.WebViewFragment"
+        android:label="WebViewFragment"
+        tools:layout="@layout/fragment_web_view">
+        <action
+            android:id="@+id/action_webViewFragment_to_gameMenuFragment"
+            app:destination="@id/gameMenuFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/gameFragment"
+        android:name="tymofiy.dev.testsmatrapp.ui.fragments.game.GameFragment"
+        android:label="GameFragment"
+        tools:layout="@layout/fragment_game">
+        <action
+            android:id="@+id/action_gameFragment_to_gameMenuFragment"
+            app:destination="@id/gameMenuFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/gameMenuFragment"
+        android:name="tymofiy.dev.testsmatrapp.ui.fragments.game.GameMenuFragment"
+        android:label="GameMenuFragment"
+        tools:layout="@layout/fragment_game_menu">
+        <action
+            android:id="@+id/action_gameMenuFragment_to_gameFragment"
+            app:destination="@id/gameFragment" />
+    </fragment>
+</navigation>
